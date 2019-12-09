@@ -9,8 +9,6 @@
 - This project is based on device9999's base
 - To use it, you need to compile it in 64 bits mode and inject your dll file.
 
-![alt text](https://raw.githubusercontent.com/Sh0ckFR/Universal-ImGui-D3D11-Hook/master/imgui.png)
-
 ## Built With
 
 * [MinHook](https://github.com/TsudaKageyu/minhook) - The Minimalistic x86/x64 API Hooking Library for Windows
