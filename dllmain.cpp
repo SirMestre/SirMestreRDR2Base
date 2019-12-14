@@ -2,7 +2,7 @@
 
 unsigned long __stdcall onAttach()
 {
-	hooks::initialize();
+	hooks::Init();
 	return 0;
 }
 
