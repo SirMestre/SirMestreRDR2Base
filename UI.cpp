@@ -111,4 +111,38 @@ namespace UI {
 			return true;
 		else return false;
 	}
+
+	bool FloatOption(const char* option, float *var, float min, float max, float step) {
+		Option(option);
+
+		char buf[100];
+		_snprintf_s(buf, sizeof(buf), "%.2f", *var);
+
+		if (controls::currentoption <= 16 && controls::optioncount <= 16)
+			drawText("<" + (std::string)buf + ">", 25, menux + 200.f, (controls::optioncount * 30.f) + 40.f, optionRGB);
+		else if ((controls::optioncount > (controls::currentoption - 16)) && controls::optioncount <= controls::currentoption)
+			drawText("<" + (std::string)buf + ">", 25, menux + 200.f, (((controls::optioncount - (controls::currentoption - 16)) * 30.f) + 40.f), optionRGB);
+
+		if (controls::currentoption == controls::optioncount) {
+			if (controls::leftpress) {
+				if (*var <= min) *var = max;
+				else *var -= step;
+				controls::leftpress = false;
+				return true;
+			}
+			if (*var < min) *var = max;
+
+			if (controls::rightpress) {
+				if (*var >= max) *var = min;
+				else *var += step;
+				controls::rightpress = false;
+				return true;
+			}
+			if (*var > max) *var = min;
+		}
+
+		if (controls::optionpress && controls::currentoption == controls::optioncount)
+			return true;
+		else return false;
+	}
 }
