@@ -4,7 +4,8 @@ namespace menu {
 	void Init() {
 		controls::CheckKeys();
 
-		int variable = 0;
+		int variable_int = 0;
+		float variable_float = 0.f;
 
 		if (controls::isMenuEnabled) {
 			if (controls::currentMenu("mainmenu")) {
@@ -19,7 +20,8 @@ namespace menu {
 				UI::Title("Self");
 				if (UI::BoolOption("God Mode", &features::isGodModeEnabled)) features::GodMode();
 				if (UI::Option("Clone Ped")) features::ClonePed();
-				if (UI::IntOption("Test Int", &variable, 0, 10, 1));
+				if (UI::IntOption("Test Int", &variable_int, 0, 10, 1));
+				if (UI::FloatOption("Test Float", &variable_float, 0.1f, 2.f, 0.1f));
 			}
 
 			if (controls::currentMenu("weapons")) {
