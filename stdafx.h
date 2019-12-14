@@ -18,9 +18,9 @@
 #include "globals.h"
 #include "hooks.h"
 #include "memory.h"
+#include "controls.h"
 #include "UI.h"
 #include "menu.h"
-#include "controls.h"
 #include "features.h"
 
 struct rgba {

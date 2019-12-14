@@ -37,6 +37,7 @@ namespace hooks {
 		printf("create_status : %s\n", std::string(MH_StatusToString(status)).c_str());
 		status = MH_EnableHook((PVOID)get_player_ped);
 		printf("enable_status : %s\n\n", std::string(MH_StatusToString(status)).c_str());
+		printf("get_player_ped: %I64X\n", get_player_ped);
 
 		Beep(220, 100);
 

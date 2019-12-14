@@ -1,11 +1,11 @@
 #include "stdafx.h"
 
 namespace menu {
+	int variable_int = 0;
+	float variable_float = 0.f;
+
 	void Init() {
 		controls::CheckKeys();
-
-		int variable_int = 0;
-		float variable_float = 0.f;
 
 		if (controls::isMenuEnabled) {
 			if (controls::currentMenu("mainmenu")) {
