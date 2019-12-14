@@ -1,4 +1,4 @@
 #pragma once
 namespace hooks {
-	extern void initialize();
+	extern void Init();
 }
